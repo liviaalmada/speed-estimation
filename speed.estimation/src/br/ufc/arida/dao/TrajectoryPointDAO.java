@@ -96,6 +96,7 @@ public class TrajectoryPointDAO {
 			Timestamp endDate) throws ClassNotFoundException, SQLException, IOException {
 		Connection connection = ConnectionJDBC.getConnection();
 		String strQuery = "select * from " + tableName + " where date_time between ? and ?  order by id, date_time";
+		System.out.println(strQuery);
 		PreparedStatement query = connection.prepareStatement(strQuery);
 		Map<Integer, List<GPXEntry>> trajectories = new HashMap<>();
 		int idTraj = -1;
@@ -219,7 +220,7 @@ public class TrajectoryPointDAO {
 		java.sql.Timestamp endDatetime = java.sql.Timestamp.from(zdt2.toInstant());
 		System.out.println(endDatetime);
 		try {
-			ArrayList<TrajectoryAsSet> trajectoriesAsSet = dao.readTrajectoriesAsSetWithEdges("taxi_junho",
+			ArrayList<TrajectoryAsSet> trajectoriesAsSet = dao.readTrajectoriesAsSetWithEdges("taxi-fortaleza",
 					startDatetime, endDatetime);
 			System.out.println(trajectoriesAsSet);
 		} catch (ClassNotFoundException e) {
