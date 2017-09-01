@@ -92,7 +92,7 @@ public class TrajectoryPointDAO {
 		return trajectories;
 	}
 
-	public Map<Integer, List<GPXEntry>> readTrajectoriesAsGPXEntries(String tableName, Timestamp startDate,
+	public Map<Integer, List<GPXEntry>> readTrajectoriesAsGPXEntriesTSDatabase(String tableName, Timestamp startDate,
 			Timestamp endDate) throws ClassNotFoundException, SQLException, IOException {
 		Connection connection = ConnectionJDBC.getConnection();
 		String strQuery = "select * from " + tableName + " where date_time between ? and ?  order by id, date_time";
