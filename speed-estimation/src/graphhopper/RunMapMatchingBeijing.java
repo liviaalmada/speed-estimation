@@ -19,11 +19,11 @@ public class RunMapMatchingBeijing {
 								// startHour
 								// and
 			// Read osm file as a Graph
-			String osm = "/Users/liviaalmada/Documents/osm-fortaleza.osm";
-			String graphHopper = "ghnetwork";
+			String osm = "/media/livia/DATA/DADOS/Beijing/Beijing.osm.pbf";
+			String graphHopper = "graphopper-beijing";
 			// try {
 
-			// RunGraphHopperMapMatchingSpeed.doImport(osm, graphHopper);
+			RunGraphHopperMapMatchingSpeed.doImport(osm, graphHopper);
 			// ZoneId zoneId = ZoneId.of("GMT-3");
 			// int year = 2016;
 			// TrajectoryPointDAO dao = new TrajectoryPointDAO();
